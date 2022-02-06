@@ -1,0 +1,6 @@
+{
+    "name": "Xenios",
+    "symbol": "EURX",
+    "algorithm": "x11",
+    "mposDiffMultiplier": 256
+}
