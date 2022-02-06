@@ -1,8 +1,3 @@
-## This repo is looking for maintainers! Please reach out if interested.
-
---------
-
-
 # NOMP ![NOMP Logo](http://zone117x.github.io/node-open-mining-portal/logo.svg "NOMP Logo")
 #### Node Open Mining Portal
 
@@ -10,14 +5,34 @@ This portal is an extremely efficient, highly scalable, all-in-one, easy to setu
 entirely in Node.js. It contains a stratum poolserver; reward/payment/share processor; and a (*not yet completed*)
 responsive user-friendly front-end website featuring mining instructions, in-depth live statistics, and an admin center.
 
-#### Production Usage Notice
-This is beta software. All of the following are things that can change and break an existing NOMP setup: functionality of any feature, structure of configuration files and structure of redis data. If you use this software in production then *DO NOT* pull new code straight into production usage because it can and often will break your setup and require you to tweak things like config files or redis data.
+## Xenios Fork Setup
 
-#### Paid Solution
-Usage of this software requires abilities with sysadmin, database admin, coin daemons, and sometimes a bit of programming. Running a production pool can literally be more work than a full-time job. 
+1. Clone and setup Xenios Coin Daemon according to https://github.com/xeniosproject/xenioscoin
+2. Install dependencies:
+    ```
+    sudo apt-get install redis-server npm wget vim cmake screen -y
+    ```
 
+2. Type the following command to show the receiving address of your daemon, store it in variable `xncaddress`:
+   ```bash
+   xncaddress=$(xenios-cli getaccountaddress "") # Example output 4UyrFQrAoNQMEMqNhZTareRmjeU68bLiop
+   ```
+3. Download and install Xenios Nomp 
+    ```bash
+    wget https://github.com/Xenios-Project/node-open-mining-portal/archive/refs/heads/master.zip
+    unzip master.zip && mv node-open-mining-portal/ nomp/
+    npm update
+    ```
+4. Copy config_example.json to config.json and apply config:
+    ```bash
+    $current_ip=$(hostname -I | awk '{print $1}') # get current IP
 
-**Coin switching & auto-exchanging for payouts in BTC/LTC** to miners is a feature that very likely will not be included in this project. 
+    cp config_example.json config.json
+    sed "s/current_host_placeholder/$current_ip/" -i ./config.json
+    sed "s/stratumhost_placeholder/$current_ip/" -i ./config.json
+    ```
+5. 
+
 
 
 #### Table of Contents

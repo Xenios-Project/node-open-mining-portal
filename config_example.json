@@ -1,3 +1,19 @@
+Modify the following values in the file config.json.
+
+stratumHost - Change the value“ cryppit.com” with the IPv4 address of your server.
+Save the file with the keyboard shortcut ctrl + x.
+Type the following commands to create the config file
+for your coin:
+    cd coins
+cp darkcoin.json xenios.json
+Open nano.
+nano xenios.json - t
+Modify the following values in the file xenios.json.
+name - “Darkcoin” - > “Xenios”.
+symbol - “DRK” - > “EURX”.
+Save the file with the keyboard combination ctrl + x.
+
+
 {
     "logLevel": "debug",
     "logColors": true,
@@ -31,9 +47,9 @@
 
     "website": {
         "enabled": true,
-        "host": "0.0.0.0",
+        "host": "current_host_placeholder",
         "port": 80,
-        "stratumHost": "cryppit.com",
+        "stratumHost": "stratumhost_placeholder",
         "stats": {
             "updateInterval": 60,
             "historicalRetention": 43200,
@@ -91,10 +107,10 @@
                     "diff": 0.001,
                     "varDiff": {
                         "minDiff": 0.001,
-                        "maxDiff": 1, 
-                        "targetTime": 15, 
-                        "retargetTime": 60, 
-                        "variancePercent": 30 
+                        "maxDiff": 1,
+                        "targetTime": 15,
+                        "retargetTime": 60,
+                        "variancePercent": 30
                     }
                 }
             }
