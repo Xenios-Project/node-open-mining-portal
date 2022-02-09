@@ -15,7 +15,7 @@ responsive user-friendly front-end website featuring mining instructions, in-dep
 3. Download and install Xenios Nomp 
     ```bash
     wget https://github.com/Xenios-Project/node-open-mining-portal/archive/refs/heads/master.zip
-    unzip master.zip && mv node-open-mining-portal/ nomp/
+    unzip master.zip && mv node-open-mining-portal-master/ nomp/
     npm update
     ```
 4. Copy config_example.json to config.json and apply config:
