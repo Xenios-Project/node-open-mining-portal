@@ -39,9 +39,9 @@
 
     "daemons": [{
         "host": "127.0.0.1",
-        "port": 19332,
-        "user": "testuser",
-        "password": "testpass"
+        "port": 31049,
+        "user": "rpc_user_placeholder",
+        "password": "rpc_user_placeholder"
     }],
 
     "p2p": {
