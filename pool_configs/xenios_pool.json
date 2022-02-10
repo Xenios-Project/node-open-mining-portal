@@ -1,0 +1,65 @@
+{
+    "enabled": true,
+    "coin": "xenios.json",
+
+    "address": "my_address_placeholder",
+
+    "rewardRecipients": {},
+
+    "paymentProcessing": {
+        "enabled": true,
+        "paymentInterval": 20,
+        "minimumPayment": 0.01,
+        "daemon": {
+            "host": "127.0.0.1",
+            "port": 31049,
+            "user": "rpc_user_placeholder",
+            "password": "rpc_password_placeholder"
+        }
+    },
+
+    "ports": {
+        "3008": {
+            "diff": 8
+        },
+        "3032": {
+            "diff": 32,
+            "varDiff": {
+                "minDiff": 8,
+                "maxDiff": 512,
+                "targetTime": 15,
+                "retargetTime": 90,
+                "variancePercent": 30
+            }
+        },
+        "3256": {
+            "diff": 0.01
+        }
+    },
+
+    "daemons": [{
+        "host": "127.0.0.1",
+        "port": 19332,
+        "user": "testuser",
+        "password": "testpass"
+    }],
+
+    "p2p": {
+        "enabled": false,
+        "host": "127.0.0.1",
+        "port": 19333,
+        "disableTransactions": true
+    },
+
+    "mposMode": {
+        "enabled": false,
+        "host": "127.0.0.1",
+        "port": 3306,
+        "user": "me",
+        "password": "mypass",
+        "database": "ltc",
+        "checkPassword": true,
+        "autoCreateWorker": false
+    }
+
+}

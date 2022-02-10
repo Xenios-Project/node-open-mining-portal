@@ -29,6 +29,7 @@ responsive user-friendly front-end website featuring mining instructions, in-dep
     ```
 5. Config mining pull:
     ```bash
+    if ! pgrep -x xeniosd >/dev/null;then xeniosd;fi
     xncaddress=$(xenios-cli getaccountaddress "") # get address of wallet
     xncpass=$(grep -Po '(?<=rpcpassword=).*' ~/.xenios/xenios.conf) # get rpc password
     rpcuser=$(grep -Po '(?<=rpcuser=).*' ~/.xenios/xenios.conf) # get rpc username
