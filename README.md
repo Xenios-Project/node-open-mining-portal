@@ -7,7 +7,10 @@ responsive user-friendly front-end website featuring mining instructions, in-dep
 
 ## Xenios Fork Setup
 
-1. Clone and setup Xenios Coin Daemon according to https://github.com/xeniosproject/xenioscoin
+1. Clone and setup Xenios Coin Daemon according to https://github.com/xeniosproject/xenioscoin and start the daemon
+    ```
+    xeniosd
+    ```
 2. Install dependencies:
     ```
     sudo apt-get install redis-server npm wget vim cmake screen -y
@@ -29,9 +32,10 @@ responsive user-friendly front-end website featuring mining instructions, in-dep
     ```
 5. Config mining pull:
     ```bash
-    if ! pgrep -x xeniosd >/dev/null;then xeniosd;fi
+    if ! pgrep -x xeniosd >/dev/null;then xeniosd && sleep 3;fi
     xncaddress=$(xenios-cli getaccountaddress "") # get address of wallet
     xncpass=$(grep -Po '(?<=rpcpassword=).*' ~/.xenios/xenios.conf) # get rpc password
+    xncpass=$(printf '%s\n' "${xncpass}" | sed -e 's/[]\/$*.^[]/\\&/g');
     rpcuser=$(grep -Po '(?<=rpcuser=).*' ~/.xenios/xenios.conf) # get rpc username
     sed "s/my_address_placeholder/$xncaddress/" -i ${currdir}/pool_configs/xenios_pool.json #change address to address of current node
     sed "s/rpc_user_placeholder/$rpcuser/" -i ${currdir}/pool_configs/xenios_pool.json #change username
