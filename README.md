@@ -15,30 +15,31 @@ responsive user-friendly front-end website featuring mining instructions, in-dep
 3. Download and install Xenios Nomp 
     ```bash
     wget https://github.com/Xenios-Project/node-open-mining-portal/archive/refs/heads/master.zip
-    unzip master.zip && mv node-open-mining-portal-master/ nomp/
+    unzip master.zip && mv node-open-mining-portal-master/ nomp/ && cd nomp
+    currdir=$(pwd) # get current directory
     npm update
     ```
 4. Copy config_example.json to config.json and apply config:
     ```bash
     current_ip=$(hostname -I | awk '{print $1}') # get current IP
 
-    cp config_example.json config.json
-    sed "s/current_host_placeholder/$current_ip/" -i ./config.json
-    sed "s/stratumhost_placeholder/$current_ip/" -i ./config.json
+    cp ${currdir}/config_example.json ${currdir}/config.json
+    sed "s/current_host_placeholder/$current_ip/" -i ${currdir}/config.json
+    sed "s/stratumhost_placeholder/$current_ip/" -i ${currdir}/config.json
     ```
 5. Config mining pull:
     ```bash
     xncaddress=$(xenios-cli getaccountaddress "") # get address of wallet
     xncpass=$(grep -Po '(?<=rpcpassword=).*' ~/.xenios/xenios.conf) # get rpc password
     rpcuser=$(grep -Po '(?<=rpcuser=).*' ~/.xenios/xenios.conf) # get rpc username
-    sed "s/my_address_placeholder/$xncaddress/" -i ./pool_configs/xenios_pool.json #change address to address of current node
-    sed "s/rpc_user_placeholder/$rpcuser/" -i ./pool_configs/xenios_pool.json #change username
-    sed "s/rpc_password_placeholder/$xncpass/" -i ./pool_configs/xenios_pool.json #change password
+    sed "s/my_address_placeholder/$xncaddress/" -i ${currdir}/pool_configs/xenios_pool.json #change address to address of current node
+    sed "s/rpc_user_placeholder/$rpcuser/" -i ${currdir}/pool_configs/xenios_pool.json #change username
+    sed "s/rpc_password_placeholder/$xncpass/" -i ${currdir}/pool_configs/xenios_pool.json #change password
     ```
 6. Start mining pool
     ```bash
     screen -S node_mining
-    cd $HOME/nomp
+    cd ${currdir}
     node init.js
     ```
 
