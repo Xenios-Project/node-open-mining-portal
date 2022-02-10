@@ -41,7 +41,7 @@
         "host": "127.0.0.1",
         "port": 31049,
         "user": "rpc_user_placeholder",
-        "password": "rpc_user_placeholder"
+        "password": "rpc_password_placeholder"
     }],
 
     "p2p": {

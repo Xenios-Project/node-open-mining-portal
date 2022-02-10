@@ -14,6 +14,8 @@ responsive user-friendly front-end website featuring mining instructions, in-dep
 2. Install dependencies:
     ```
     sudo apt-get install redis-server npm wget vim cmake screen -y
+    sudo systemctl start redis-server
+    sudo systemctl enable redis-server
     ```
 3. Download and install Xenios Nomp 
     ```bash
