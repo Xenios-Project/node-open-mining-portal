@@ -47,7 +47,8 @@ responsive user-friendly front-end website featuring mining instructions, in-dep
     ```bash
     screen -S node_mining
     cd ${currdir}
-    node init.js
+    setcap 'cap_net_bind_service=+ep' /usr/bin/node # required to allow non-root user to open port 80
+    node init.js # required cause i
     ```
 
 #### Table of Contents
