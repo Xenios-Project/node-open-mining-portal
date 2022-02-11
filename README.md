@@ -5,7 +5,11 @@ This portal is an extremely efficient, highly scalable, all-in-one, easy to setu
 entirely in Node.js. It contains a stratum poolserver; reward/payment/share processor; and a (*not yet completed*)
 responsive user-friendly front-end website featuring mining instructions, in-depth live statistics, and an admin center.
 
-## Xenios Fork Setup
+## Xenios Fork
+
+Xenios being a hybrid scrypt cryptocurrency uses mining to further secure its blockchain. To further understand the overall role mining has in the Xenios Exosystem refer to [this](https://coinjournal.net/dash/mine/#breaking-down-dash-mining) article that describes how to mine for Dash. Even as numbers and specifics differ, it still offers a good overview.
+
+### Setup
 
 1. Clone and setup Xenios Coin Daemon according to https://github.com/xeniosproject/xenioscoin and start the daemon
     ```
@@ -55,6 +59,9 @@ To test the newly created mining pool you can use a miner software e.g. [cpumine
 ```bash
 minerd -a scrypt -o stratum+tcp://<IP>:3008 -u <wallet for rewards> -p <random string>
 ```
+---
+
+## nomp Readme
 
 #### Table of Contents
 * [Features](#features)
