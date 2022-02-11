@@ -7,7 +7,7 @@ responsive user-friendly front-end website featuring mining instructions, in-dep
 
 ## Xenios Fork
 
-Xenios being a hybrid scrypt cryptocurrency uses mining to further secure its blockchain. To further understand the overall role mining has in the Xenios Exosystem refer to [this](https://coinjournal.net/dash/mine/#breaking-down-dash-mining) article that describes how to mine for Dash. Even as numbers and specifics differ, it still offers a good overview.
+Xenios being a hybrid scrypt cryptocurrency uses mining to further secure its blockchain. To further understand the overall role mining has in the Xenios Exosystem refer to [this](https://coinjournal.net/dash/mine/#breaking-down-dash-mining) article that describes how to mine for Dash. Even if the numbers and the specifics differ, it still offers a good overview.
 
 ### Setup
 
