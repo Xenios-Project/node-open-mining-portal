@@ -1,4 +1,4 @@
-# NOMP ![NOMP Logo](http://zone117x.github.io/node-open-mining-portal/logo.svg "NOMP Logo")
+# NOMP ![NOMP Logo](http://zone117x.github.io/node-open-mining-portal/logo.svg "NOMP Logo") ![XNC Logo](https://static.tildacdn.com/tild3331-3039-4331-a230-393430323864/Full.svg "NOMP Logo")
 #### Node Open Mining Portal
 
 This portal is an extremely efficient, highly scalable, all-in-one, easy to setup cryptocurrency mining pool written
@@ -50,6 +50,11 @@ responsive user-friendly front-end website featuring mining instructions, in-dep
     setcap 'cap_net_bind_service=+ep' /usr/bin/node # required to allow non-root user to open port 80
     node init.js # required cause i
     ```
+
+To test the newly created mining pool you can use a miner software e.g. [cpuminer](https://github.com/pooler/cpuminer) and start mining using the pool:
+```bash
+minerd -a scrypt -o stratum+tcp://<IP>:3008 -u <wallet for rewards> -p <random string>
+```
 
 #### Table of Contents
 * [Features](#features)
